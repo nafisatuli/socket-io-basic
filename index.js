@@ -16,10 +16,17 @@ io.on('connection',function(socket){
     // socket.on('disconnect',function(){
     //     console.log("User Disconnected");
     // })
-    setTimeout(() => {
-        //through this data and catch it on client side
-        socket.send("Server--->Client")
-    }, 10000);
+    // setTimeout(() => {
+    //     //through this data and catch it on client side
+    //     socket.send("Server--->Client")
+    // }, 10000);
+
+    //continue data transfer
+    setInterval(() => {
+        let d= new Date();
+        let t=d.getTime();
+        socket.send(t);
+    }, 2000);
 })
 
 

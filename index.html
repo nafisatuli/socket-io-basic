@@ -4,7 +4,7 @@
 </head>
 
 <body>
-
+<h1 id='mytime'><h1>
 
 
 
@@ -15,7 +15,10 @@
 <script>
     let socket=io();
     socket.on('message',function (msg) {
-        document.write(msg)
+        // document.write(msg)
+
+        document.getElementById('mytime').innerHTML="";
+        document.getElementById('mytime').innerHTML=msg;
     })
 </script>
 
