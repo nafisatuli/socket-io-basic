@@ -1,0 +1,24 @@
+{
+  "name": "chat-app-with-socket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nafisatuli/chat-app-with-socket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nafisatuli/chat-app-with-socket/issues"
+  },
+  "homepage": "https://github.com/nafisatuli/chat-app-with-socket#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "socket.io": "^4.5.2"
+  }
+}
