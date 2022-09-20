@@ -4,7 +4,7 @@
 </head>
 
 <body>
-    <h1>Hello</h1>
+
 
 
 
@@ -14,6 +14,9 @@
 <!-- create an instance of socket -->
 <script>
     let socket=io();
+    socket.on('message',function (msg) {
+        document.write(msg)
+    })
 </script>
 
 </body>

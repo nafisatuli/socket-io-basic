@@ -13,9 +13,13 @@ const io=new Server(expressServer);
 io.on('connection',function(socket){
     console.log("User Connected");
 
-    socket.on('disconnect',function(){
-        console.log("User Disconnected");
-    })
+    // socket.on('disconnect',function(){
+    //     console.log("User Disconnected");
+    // })
+    setTimeout(() => {
+        //through this data and catch it on client side
+        socket.send("Server--->Client")
+    }, 10000);
 })
 
 
