@@ -1,16 +1,16 @@
-const express=require('express');
-const app=express();
-const http=require('http');
-const expressServer=http.createServer(app);
+const express = require('express');
+const app = express();
+const http = require('http');
+const expressServer = http.createServer(app);
 
 
 //socket configuration
-const {Server}=require('socket.io');
+const { Server } = require('socket.io');
 
 //pass expressServer as a contructor parameter in the object
-const io=new Server(expressServer);
+const io = new Server(expressServer);
 
-io.on('connection',function(socket){
+io.on('connection', function (socket) {
     console.log("User Connected");
 
     // socket.on('disconnect',function(){
@@ -23,17 +23,20 @@ io.on('connection',function(socket){
 
     //continue data transfer
     setInterval(() => {
-        let d= new Date();
-        let t=d.getTime();
-        socket.send(t);
+        let d = new Date();
+        let t = d.getTime();
+        //socket.send(t);
+
+        //custom event
+        socket.emit("myEvent", t);
     }, 2000);
 })
 
 
-app.get('/',function(req,res){
-    res.sendFile(__dirname+'/index.html')
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/index.html')
 })
 
-expressServer.listen(3000,function () {
+expressServer.listen(3000, function () {
     console.log("server run at 3000")
 })

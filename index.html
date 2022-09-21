@@ -1,26 +1,35 @@
 <html lang="en">
+
 <head>
-<title>socket</title>
+    <title>socket</title>
 </head>
 
 <body>
-<h1 id='mytime'><h1>
+    <h1 id='mytime'>
+        <h1>
 
 
 
 
 
-    <script src="/socket.io/socket.io.js"></script>
-<!-- create an instance of socket -->
-<script>
-    let socket=io();
-    socket.on('message',function (msg) {
-        // document.write(msg)
+            <script src="/socket.io/socket.io.js"></script>
+            <!-- create an instance of socket -->
+            <script>
+                let socket = io();
+                // socket.on('message',function (msg) {
+                //     // document.write(msg)
 
-        document.getElementById('mytime').innerHTML="";
-        document.getElementById('mytime').innerHTML=msg;
-    })
-</script>
+                //     document.getElementById('mytime').innerHTML="";
+                //     document.getElementById('mytime').innerHTML=msg;
+                // })
+                socket.on('myEvent', function (msg) {
+                    // document.write(msg)
+
+                    document.getElementById('mytime').innerHTML = "";
+                    document.getElementById('mytime').innerHTML = msg;
+                })
+            </script>
 
 </body>
+
 </html>
