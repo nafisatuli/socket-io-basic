@@ -5,16 +5,17 @@
 </head>
 
 <body>
-    <h1 id='mytime'>
-        <h1>
+    <!-- <h1 id='mytime'>
+        <h1> -->
+
+    <input type="text" id="name">
+    <button onclick="send()" id="send">Send</button>
 
 
 
-
-
-            <script src="/socket.io/socket.io.js"></script>
-            <!-- create an instance of socket -->
-            <script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- create an instance of socket -->
+    <!-- <script>
                 let socket = io();
                 // socket.on('message',function (msg) {
                 //     // document.write(msg)
@@ -28,7 +29,18 @@
                     document.getElementById('mytime').innerHTML = "";
                     document.getElementById('mytime').innerHTML = msg;
                 })
-            </script>
+            </script> -->
+
+    <!-- client to server -->
+    <script>
+        let socket = io();
+
+        function send() {
+            let name = document.getElementById('name').value;
+
+            socket.send(name)
+        }
+    </script>
 
 </body>
 
