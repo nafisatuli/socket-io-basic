@@ -33,16 +33,24 @@ const io = new Server(expressServer);
 // })
 
 
-//client to server data receive
+// //client to server data receive
+// io.on('connection', function (socket) {
+//     console.log("User connected")
+//     // socket.on('message', function (msg) {
+//     //     console.log(msg)
+//     // })
+//     socket.on('myEvent', function (msg) {
+//         console.log(msg)
+//     })
+// })
+
+
+
+//broadcasting
 io.on('connection', function (socket) {
-    console.log("User connected")
-    // socket.on('message', function (msg) {
-    //     console.log(msg)
-    // })
-    socket.on('myEvent', function (msg) {
-        console.log(msg)
-    })
+    io.sockets.emit("MyBroadcast", "Hello!")
 })
+
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html')

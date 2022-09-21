@@ -8,9 +8,9 @@
     <!-- <h1 id='mytime'>
         <h1> -->
 
-    <input type="text" id="name">
-    <button onclick="send()" id="send">Send</button>
-
+    <h1 id="msg"></h1>
+    <!-- <input type="text" id="name">
+    <button onclick="send()" id="send">Send</button> -->
 
 
     <script src="/socket.io/socket.io.js"></script>
@@ -32,7 +32,7 @@
             </script> -->
 
     <!-- client to server -->
-    <script>
+    <!-- <script>
         let socket = io();
 
         // function send() {
@@ -48,6 +48,15 @@
 
             socket.emit("myEvent", name);
         }
+    </script> -->
+
+    <!-- Broadcast -->
+
+    <script>
+        let socket = io();
+        socket.on('MyBroadcast', function (data) {
+            document.getElementById('msg').innerHTML = data
+        })
     </script>
 
 </body>
