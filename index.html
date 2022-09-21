@@ -52,9 +52,17 @@
 
     <!-- Broadcast -->
 
-    <script>
+    <!-- <script>
         let socket = io();
         socket.on('MyBroadcast', function (data) {
+            document.getElementById('msg').innerHTML = data
+        })
+    </script> -->
+
+    <!-- Namespace -->
+    <script>
+        let socket = io('/buy');
+        socket.on('MyEvent', function (data) {
             document.getElementById('msg').innerHTML = data
         })
     </script>

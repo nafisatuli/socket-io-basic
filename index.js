@@ -46,11 +46,21 @@ const io = new Server(expressServer);
 
 
 
-//broadcasting
-io.on('connection', function (socket) {
-    io.sockets.emit("MyBroadcast", "Hello!")
+// //broadcasting
+// io.on('connection', function (socket) {
+//     io.sockets.emit("MyBroadcast", "Hello!")
+// })
+
+//NAMESPACE
+let buyNsp = io.of('/buy');
+buyNsp.on('connection', function (socket) {
+    buyNsp.emit('MyEvent', "This is buyNsp")
 })
 
+let sellNsp = io.of('/sell');
+sellNsp.on('connection', function (socket) {
+    sellNsp.emit("MyEvent", "This is sellNsp")
+})
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html')
