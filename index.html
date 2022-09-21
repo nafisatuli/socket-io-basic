@@ -35,10 +35,18 @@
     <script>
         let socket = io();
 
+        // function send() {
+        //     let name = document.getElementById('name').value;
+
+        //     socket.send(name)
+        // }
+
+
+        //custom event
         function send() {
             let name = document.getElementById('name').value;
 
-            socket.send(name)
+            socket.emit("myEvent", name);
         }
     </script>
 

@@ -36,7 +36,10 @@ const io = new Server(expressServer);
 //client to server data receive
 io.on('connection', function (socket) {
     console.log("User connected")
-    socket.on('message', function (msg) {
+    // socket.on('message', function (msg) {
+    //     console.log(msg)
+    // })
+    socket.on('myEvent', function (msg) {
         console.log(msg)
     })
 })
