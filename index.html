@@ -60,9 +60,17 @@
     </script> -->
 
     <!-- Namespace -->
-    <script>
+    <!-- <script>
         let socket = io('/buy');
         socket.on('MyEvent', function (data) {
+            document.getElementById('msg').innerHTML = data
+        })
+    </script> -->
+
+    <!-- Rooms -->
+    <script>
+        let socket = io();
+        socket.on('sleep', function (data) {
             document.getElementById('msg').innerHTML = data
         })
     </script>
